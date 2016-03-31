@@ -10,9 +10,33 @@ services:
       # This is needed otherwise there won't be enough entropy to generate a new kerberos realm
       - /dev/urandom:/dev/random
 
-  kerberos-client:
-    build: ./kerberos-client
-    env_file: kerberos.env
+  # This service MUST have the name "afs" otherwise every afs client won't be able to talk with the AFS server.
+  # If would like to change the name edit the file configureAFSClient.sh and change
+  afs:
+    build: ./afs
+    privileged: true
+    hostname: afs
+    domainname: example.com
+    env_file:
+      - kerberos.env
+      - afs.env
+    depends_on:
+      - kdc-kadmin
+
+  # If you change this service name also change it the start.sh script in the line right after the docker-compose up
+  afs-client:
+    build: ./afs-client
+    privileged: true
+    domainname: example.com
+    environment:
+      - AFS_SERVER=afs
+    env_file:
+      - kerberos.env
+      - afs.env
+    depends_on:
+      - kdc-kadmin
+      - afs
+
 
 # NOTE:
 #  "env_file: kerberos.env" is optional.

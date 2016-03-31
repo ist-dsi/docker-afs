@@ -1,0 +1,1 @@
+../afs/configureKerberosClient.sh
