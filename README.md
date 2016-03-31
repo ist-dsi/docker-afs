@@ -2,19 +2,25 @@
 A docker image that creates a single AFS server and a docker image that is an AFS client.
 
 # What you get
-
- - 
- - 
- - 
- - 
+ - An AFS server with
+   - A protection database server
+   - A volume location server
+   - A backup server
+   - Demand-attach file server
+   - An AFS admin user (by default afsadmin.admin)
+ - An AFS client where you can run AFS functions
 
 ## Running
-Just run `docker-compose up` on the root directory of this repo.
+Just run `./start.sh` on the root directory of this repo.
 
-## How to customize (eg. change the REALM)
+You will need to have [Vagrant installed](https://www.vagrantup.com/docs/installation/).
+
+## How to customize (eg. change the CELL_NAME)
 
  1. Change the file `afs.env`. This way the properties will be shared between the various containers.
  1. Define environment variables in `docker-compose.yml`. You will need to define them for each service that uses AFS.
+
+You can also customize Kerberos parameters in the `kerberos.env` file.
 
 ## Sugested usage of this repo
 This repository has designed to bootstrap the creation of an AFS server for projects that need an AFS installation to perform tests.
