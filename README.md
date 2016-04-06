@@ -38,11 +38,11 @@ If you want to keep up with the possible changes of this repo, you can use:
 ## Resources on how to setup an AFS server
 These are the resources that were used, in some way or another, to create the files in this repository.
  - [OpenAFS Quick Start Guide - Installing the First AFS Machine](http://docs.openafs.org/QuickStartUnix/HDRWQ17.html)
- - [Wikibooks User:Tiicoo/AFSKRB/AFSConfig](https://en.wikibooks.org/wiki/User:Tiicoo/AFSKRB/AFSConfig)
- - [OpenAFS Gentoo Wiki](https://wiki.gentoo.org/wiki/OpenAFS#Server_Installation)
- - [OpenAFS installation on Debian](https://www.debian-administration.org/article/610/OpenAFS_installation_on_Debian)
  - [Debian afs-newcell script](https://anonscm.debian.org/cgit/pkg-k5-afs/openafs.git/tree/debian/afs-newcell?id=refs/heads/jessie)
  - [Debian afs-rootvol script](https://anonscm.debian.org/cgit/pkg-k5-afs/openafs.git/tree/debian/afs-rootvol?id=refs/heads/jessie)
+ - [OpenAFS installation on Debian](https://www.debian-administration.org/article/610/OpenAFS_installation_on_Debian)
+ - [Wikibooks User:Tiicoo/AFSKRB/AFSConfig](https://en.wikibooks.org/wiki/User:Tiicoo/AFSKRB/AFSConfig)
+ - [OpenAFS Gentoo Wiki](https://wiki.gentoo.org/wiki/OpenAFS#Server_Installation)
 
 ## License
 docker-afs is open source and available under the [MIT license](LICENSE).
